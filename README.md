@@ -5,8 +5,11 @@ TaskNest is a full-stack task management application built for the Web Design an
 ## Tech Stack
 
 **Frontend:** React, Tailwind CSS, React Router, Axios
+
 **Backend:** Node.js, Express.js
+
 **Database:** MongoDB (MongoDB Atlas)
+
 **Authentication:** JWT (JSON Web Tokens), bcrypt
 
 ## Features
@@ -20,22 +23,24 @@ TaskNest is a full-stack task management application built for the Web Design an
 
 ## Project Structure
 
-tasknest/
-├── client/    → React frontend (Vite + Tailwind CSS)
-└── server/    → Node.js + Express backend (MongoDB Atlas)
+- tasknest/
+  - client/ — React frontend (Vite + Tailwind CSS)
+  - server/ — Node.js + Express backend (MongoDB Atlas)
 
 ## Getting Started
 
 ### Backend
-cd server
-npm install
-npm run dev
+
+1. Open terminal and run: cd server
+2. Run: npm install
+3. Run: npm run dev
 
 ### Frontend
-cd client
-npm install
-npm run dev
 
- ## Author
+1. Open terminal and run: cd client
+2. Run: npm install
+3. Run: npm run dev
+
+## Author
 
 Fathima Hafsa Rizvi
