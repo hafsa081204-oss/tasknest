@@ -5,13 +5,12 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { protect } = require('../middleware/authMiddleware');
 
-// Generate JWT token
+
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 };
 
-// @route   POST /api/auth/register
-// @desc    Register a new user
+
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -41,8 +40,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// @route   POST /api/auth/login
-// @desc    Login user
+
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -68,8 +66,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// @route   GET /api/auth/me
-// @desc    Get logged in user
+
 router.get('/me', protect, async (req, res) => {
   try {
     const user = await User.findById(req.userId).select('-password');

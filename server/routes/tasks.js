@@ -5,8 +5,7 @@ const { protect } = require('../middleware/authMiddleware');
 
 router.use(protect);
 
-// @route   GET /api/tasks
-// @desc    Get all tasks for logged in user (with search & status filter)
+
 router.get('/', async (req, res) => {
   try {
     const { status, search } = req.query;
@@ -27,8 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// @route   GET /api/tasks/stats
-// @desc    Get dashboard statistics
+
 router.get('/stats', async (req, res) => {
   try {
     const total = await Task.countDocuments({ userId: req.userId });
@@ -41,8 +39,7 @@ router.get('/stats', async (req, res) => {
   }
 });
 
-// @route   POST /api/tasks
-// @desc    Create a new task
+
 router.post('/', async (req, res) => {
   const { title, description, status } = req.body;
 
@@ -64,8 +61,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// @route   PUT /api/tasks/:id
-// @desc    Update a task
+
 router.put('/:id', async (req, res) => {
   try {
     const task = await Task.findOne({ _id: req.params.id, userId: req.userId });
@@ -86,8 +82,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// @route   DELETE /api/tasks/:id
-// @desc    Delete a task
+
 router.delete('/:id', async (req, res) => {
   try {
     const task = await Task.findOne({ _id: req.params.id, userId: req.userId });
